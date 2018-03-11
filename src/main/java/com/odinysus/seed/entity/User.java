@@ -3,35 +3,46 @@ package com.odinysus.seed.entity;
 import java.io.Serializable;
 
 import java.util.Date;
+
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableLogic;
+
+import java.io.Serializable;
 
 /**
  * <p>
  * 
  * </p>
  *
- * @author ${author}
- * @since 2018-02-15
+ * @author odinysus
+ * @since 2018-03-12
  */
 public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
-	private String id;
+	private Integer id;
 	private String username;
 	private String password;
 	private String phone;
-	private String creator;
-	private Date gmt_create;
-	private String updateby;
-	private Date gmt_update;
+	@TableField("create_by")
+	private Integer createBy;
+	@TableField("gmt_create")
+	private Date gmtCreate;
+	@TableField("update_by")
+	private Integer updateBy;
+	@TableField("gmt_update")
+	private Date gmtUpdate;
+	@TableLogic
+	private String state;
 
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -59,36 +70,44 @@ public class User extends Model<User> {
 		this.phone = phone;
 	}
 
-	public String getCreator() {
-		return creator;
+	public Integer getCreateBy() {
+		return createBy;
 	}
 
-	public void setCreator(String creator) {
-		this.creator = creator;
+	public void setCreateBy(Integer createBy) {
+		this.createBy = createBy;
 	}
 
-	public Date getGmt_create() {
-		return gmt_create;
+	public Date getGmtCreate() {
+		return gmtCreate;
 	}
 
-	public void setGmt_create(Date gmt_create) {
-		this.gmt_create = gmt_create;
+	public void setGmtCreate(Date gmtCreate) {
+		this.gmtCreate = gmtCreate;
 	}
 
-	public String getUpdateby() {
-		return updateby;
+	public Integer getUpdateBy() {
+		return updateBy;
 	}
 
-	public void setUpdateby(String updateby) {
-		this.updateby = updateby;
+	public void setUpdateBy(Integer updateBy) {
+		this.updateBy = updateBy;
 	}
 
-	public Date getGmt_update() {
-		return gmt_update;
+	public Date getGmtUpdate() {
+		return gmtUpdate;
 	}
 
-	public void setGmt_update(Date gmt_update) {
-		this.gmt_update = gmt_update;
+	public void setGmtUpdate(Date gmtUpdate) {
+		this.gmtUpdate = gmtUpdate;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 
 	@Override
@@ -103,10 +122,11 @@ public class User extends Model<User> {
 			", username=" + username +
 			", password=" + password +
 			", phone=" + phone +
-			", creator=" + creator +
-			", gmt_create=" + gmt_create +
-			", updateby=" + updateby +
-			", gmt_update=" + gmt_update +
+				", createBy=" + createBy +
+				", gmtCreate=" + gmtCreate +
+				", updateBy=" + updateBy +
+				", gmtUpdate=" + gmtUpdate +
+				", state=" + state +
 			"}";
 	}
 }
