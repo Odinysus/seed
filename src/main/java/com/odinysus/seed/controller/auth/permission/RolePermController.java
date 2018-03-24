@@ -1,4 +1,4 @@
-package com.odinysus.seed.web;
+package com.odinysus.seed.controller.auth.permission;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 前端控制器
+ * 省级平台角色权限 前端控制器
  * </p>
  *
  * @author odinysus
- * @since 2018-03-12
+ * @since 2018-03-24
  */
 @RestController
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/rolePerms")
+public class RolePermController {
 
 }
 
