@@ -1,17 +1,16 @@
 spring:
   application:
-    name: coder-gen
+    name: vshop
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://119.29.186.119:3306/light_cloud?useSSL=false
-    username: seed
-    password: qiang123
+    url: jdbc:mysql://119.29.186.119:3306/vshop?useSSL=false
+    username: root
+    password: Buxiqiang123#@!
 #    下面两个配置统一解决404,500等错误
   mvc:
     throw-exception-if-no-handler-found: true
   resources:
     add-mappings: false
-
 
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
@@ -35,8 +34,9 @@ mybatis-plus:
     cache-enabled: false
 logging:
   level:
-    root: ERROR
+    root: INFO
     com.odinysus.seed: DEBUG
+
 server:
   port: 9090
 
