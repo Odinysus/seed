@@ -34,7 +34,7 @@ import java.util.*;
 
 /**
  * 基于HMAC（ 散列消息认证码）的控制域
- * @author wangjie (http://www.jianshu.com/u/ffa3cba4c604) 
+ * @author wangjie (http://www.jianshu.com/u/ffa3cba4c604)
  * @date 2016年6月24日 下午2:55:15
  */
 
